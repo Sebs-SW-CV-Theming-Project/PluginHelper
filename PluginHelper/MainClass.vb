@@ -9,6 +9,7 @@ Public Class MainClass
     Public Shared UI As UI
     Public Shared TryController As TryController
 
+    Public Shared FormController As FormController
     Public Shared Controller As CustomController_Handler
     Public Shared Collection As FormCollection
 
@@ -32,10 +33,12 @@ Public Class MainClass
 
     Public Sub ExecuteForm1Subs(Form1_Form As Form1) Implements CustomController_Interface.ExecuteForm1Subs
         Form1 = Form1_Form
+        FormController = New FormController
     End Sub
 
     Public Sub ExecuteUISubs(UI_Form As UI) Implements CustomController_Interface.ExecuteUISubs
         UI = UI_Form
+        FormController.LoadEverything()
     End Sub
 
     Public Sub ExecuteTryControllerSubs(TryController_Form As TryController) Implements CustomController_Interface.ExecuteTryControllerSubs
